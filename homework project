@@ -73,3 +73,8 @@ ip address 10.10.100.3
 standby 100 ip 10.10.100.1
 standby 100 priority 140
 no shut
+
+hostname sw-3
+spanning-tree mode rapid-pvst
+vtp domain MIS351
+vtp mode client

@@ -1,0 +1,75 @@
+SW-1
+hostname SW-1
+spanning-tree mode rapid-pvst
+ip routing
+vtp domain MIS351
+vtp mode server
+int vlan10
+description moes vlan
+ip address 10.10.10.2 255.255.255.0
+standby 10 ip 10.10.10.1
+standby 10 priority 150
+no shut
+int vlan20
+description curlys vlan
+ip address 10.10.20.2 255.255.255.0
+standby 20 ip 10.10.20.1
+standby 20 priority 150
+no shut
+int vlan30
+description moes vlan
+ip address 10.10.30.2 255.255.255.0
+standby 30 ip 10.10.30.1
+standby 30 priority 150
+no shut
+int vlan40
+description curlys vlan
+ip address 10.10.40.2 255.255.255.0
+standby 40 ip 10.10.10.1
+standby 40 priority 150
+no shut
+int vlan100
+description dhcp vlan
+ip address 10.10.100.2
+standby 100 ip 10.10.100.1
+standby 100 priority 150
+no shut
+
+
+SW2
+
+hostname SW-2
+spanning-tree mode rapid-pvst
+ip routing
+vtp domain MIS351
+vtp mode server
+int vlan10
+description moes vlan
+ip address 10.10.10.3 255.255.255.0
+standby 10 ip 10.10.10.1
+standby 10 priority 140
+no shut
+int vlan20
+description curlys vlan
+ip address 10.10.20.2 255.255.255.0
+standby 20 ip 10.10.20.1
+standby 20 priority 140
+no shut
+int vlan30
+description larrys vlan
+ip address 10.10.30.3 255.255.255.0
+standby 30 ip 10.10.30.1
+standby 30 priority 140
+no shut
+int vlan40
+description shemp vlan
+ip address 10.10.40.3 255.255.255.0
+standby 40 ip 10.10.40.1
+standby 40 priority 140
+no shut
+int vlan100
+description dhcp vlan
+ip address 10.10.100.3
+standby 100 ip 10.10.100.1
+standby 100 priority 140
+no shut
